@@ -1,0 +1,867 @@
+@prefix : <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11/> .
+
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11> rdf:type owl:Ontology ;
+                                                                              <http://purl.org/dc/elements/1.1/license> "https://creativecommons.org/licenses/by/4.0/" ;
+                                                                              <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAircraft
+:hasAircraft rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain :Flight ;
+             rdfs:range :Aircraft ;
+             rdfs:comment "Relates a flight with the aircraft used." ;
+             rdfs:label "hasAircraft" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAirline
+:hasAirline rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Survey ;
+            rdfs:range :Airlines ;
+            rdfs:comment "Relates a survey with the airline it belongs to." ;
+            rdfs:label "hasAirline" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty :hasPassenger ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Survey ;
+           rdfs:range :Author ;
+           rdfs:comment "Relates a survey with its author." ;
+           rdfs:label "hasAuthor" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasCountry
+:hasCountry rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Passenger ;
+            rdfs:range :Country ;
+            rdfs:comment "Relates a passenger with the country of origin." ;
+            rdfs:label "hasCountry" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDateFlown
+:hasDateFlown rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Flight ;
+              rdfs:range :DateFlown ;
+              rdfs:comment "Relates a flight with the date it occurred." ;
+              rdfs:label "hasDateFlown" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDestination
+:hasDestination rdf:type owl:ObjectProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Flight ;
+                rdfs:range :Destination ;
+                rdfs:comment "Relates a flight with its destination." ;
+                rdfs:label "hasDestination" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasFlight
+:hasFlight rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Survey ;
+           rdfs:range :Flight ;
+           rdfs:comment "Relates a survey with the flight it refers to." ;
+           rdfs:label "hasFlight" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasOrigin
+:hasOrigin rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Flight ;
+           rdfs:range :Origin ;
+           rdfs:comment "Relates a flight with its origin." ;
+           rdfs:label "hasOrigin" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasPassenger
+:hasPassenger rdf:type owl:ObjectProperty ,
+                       owl:ReflexiveProperty ;
+              rdfs:domain :Survey ;
+              rdfs:range :Passenger ;
+              rdfs:comment "Relates a survey with the passenger who completed it." ;
+              rdfs:label "hasPassenger" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasVerified
+:hasVerified rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Survey ;
+             rdfs:range :Verified ;
+             rdfs:comment "Relates a survey with its verification status." ;
+             rdfs:label "hasVerified" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasCabinStaffService
+:hasCabinStaffService rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain :Survey ;
+                      rdfs:range xsd:int ;
+                      rdfs:comment "Relates a survey with the cabin staff service rating given by the passenger." ;
+                      rdfs:label "hasCabinStaffService" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDataPublished
+:hasDataPublished rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Survey ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "Relates a survey with the date it was published." ;
+                  rdfs:label "hasDatePublished" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasFoodBeverages
+:hasFoodBeverages rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Survey ;
+                  rdfs:range xsd:int ;
+                  rdfs:comment "Relates a survey with the food & beverages rating given by the passenger." ;
+                  rdfs:label "hasFoodBeverages" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasGroundService
+:hasGroundService rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Survey ;
+                  rdfs:range xsd:int ;
+                  rdfs:comment "Relates a survey with the ground service rating given by the passenger." ;
+                  rdfs:label "hasGroundService" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasRating
+:hasRating rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Survey ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:onDatatype xsd:float ;
+                        owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                               ]
+                                               [ xsd:maxInclusive "10.0"^^xsd:float
+                                               ]
+                                             )
+                      ] ;
+           rdfs:comment "Relates a survey with the overall rating given by the passenger." ;
+           rdfs:label "hasRating" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasRecommendation
+:hasRecommendation rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Survey ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Relates a survey with the positive recommendation provided by the passenger." ;
+                   rdfs:label "hasRecommendation" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasReview
+:hasReview rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Survey ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Relates a survey with the content of its review." ;
+           rdfs:label "hasReview" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasSeatConfort
+:hasSeatConfort rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Survey ;
+                rdfs:range xsd:int ;
+                rdfs:comment "Relates a survey with the seat comfort rating given by the passenger." ;
+                rdfs:label "hasSeatConfort" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasSeatType
+:hasSeatType rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Passenger ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Relates a survey with the seat type given by the passenger." ;
+             rdfs:label "Seat Type" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasTittleReview
+:hasTittleReview rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Survey ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Relates a survey with the title of its review." ;
+                 rdfs:label "hasTittleReview" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Aircraft
+:Aircraft rdf:type owl:Class ;
+          rdfs:subClassOf :Flight ;
+          rdfs:comment "This class represents the brand and model of aircraft used for a flight." ;
+          rdfs:label "Aircraft" ;
+          rdfs:sameAs "https://dbpedia.org/page/Aircraft" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Airlines
+:Airlines rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasFlight ;
+                            owl:someValuesFrom :Flight
+                          ] ;
+          owl:disjointWith :Flight ;
+          rdfs:comment "This class represents an airline, which can be either Qatar Airways or Ryanair." ;
+          rdfs:label "Airline" ;
+          rdfs:sameAs "https://dbpedia.org/page/Airline" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Author
+:Author rdf:type owl:Class ;
+        owl:equivalentClass :Passenger ;
+        rdfs:subClassOf :Survey ;
+        rdfs:comment "This class represents the author of a passenger survey, it means by who was made for." ;
+        rdfs:label "Author" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Cabin_Staff_Service
+:Cabin_Staff_Service rdf:type owl:Class ;
+                     rdfs:subClassOf :Rating ;
+                     rdfs:comment "This class represents the quality of service provided by the cabin crew during the flight. It includes aspects such as friendliness, responsiveness, and helpfulness of the cabin staff." ;
+                     rdfs:label "Cabin Staff Service" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :Flight ;
+      rdfs:comment "Represents a city." ;
+      rdfs:label "City" ;
+      rdfs:sameAs "https://dbpedia.org/page/City" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Passenger ;
+         rdfs:comment "This class represents the country (nationality) of a passenger." ;
+         rdfs:label "Country" ;
+         rdfs:sameAs "https://dbpedia.org/page/Country" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#DateFlown
+:DateFlown rdf:type owl:Class ;
+           rdfs:subClassOf :Flight ;
+           rdfs:comment "This class represents the date on which a flight was taken." ;
+           rdfs:label "Date Flown" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#DatePublished
+:DatePublished rdf:type owl:Class ;
+               rdfs:subClassOf :Survey ;
+               rdfs:comment "This class represents the date when a review was published within a passenger survey." ;
+               rdfs:label "Date Published" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Destination
+:Destination rdf:type owl:Class ;
+             rdfs:subClassOf :Flight ;
+             rdfs:comment "This class represents the destination of a flight in terms of country." ;
+             rdfs:label "Destination" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Flight
+:Flight rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPassenger ;
+                          owl:someValuesFrom :Passenger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAircraft ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Aircraft
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDateFlown ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :DateFlown
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDestination ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :City
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasOrigin ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :City
+                        ] ;
+        rdfs:comment "This class represents a flight, including details such as destination, origin, date flown, and aircraft type." ;
+        rdfs:label "Flight" ;
+        rdfs:sameAs "https://dbpedia.org/page/Flight" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Ground_Service
+:Ground_Service rdf:type owl:Class ;
+                rdfs:subClassOf :Rating ;
+                rdfs:comment "This class represents the quality of service provided to passengers on the ground, including check-in, boarding procedures, baggage handling, and other pre-flight and post-flight services." ;
+                rdfs:label "Ground Service" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Inflight_Entertainment
+:Inflight_Entertainment rdf:type owl:Class ;
+                        rdfs:subClassOf :Rating ;
+                        rdfs:comment "This class represents the quality and variety of entertainment options available to passengers during the flight. It includes aspects such as movie selection, music channels, TV shows, and other onboard entertainment amenities." ;
+                        rdfs:label "Inflight Entertainment" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Origin
+:Origin rdf:type owl:Class ;
+        rdfs:subClassOf :Flight ;
+        rdfs:comment "This class represents the origin counrty of a flight." ;
+        rdfs:label "Origin" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Passenger
+:Passenger rdf:type owl:Class ;
+           rdfs:comment "This class represents a passenger who has taken a flight with one of the airlines (Qatar Airways or Ryanair) and has filled out a satisfaction survey; including details such as continent, country, and traveller type." ;
+           rdfs:label "Passenger" ;
+           rdfs:sameAs "https://dbpedia.org/page/Passenger" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Rating
+:Rating rdf:type owl:Class ;
+        rdfs:subClassOf :Survey ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRating ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:int
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRating ;
+                          owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:int
+                        ] ;
+        rdfs:comment "This class represents the rating given in a passenger survey." ;
+        rdfs:label "Rating" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Recommendation
+:Recommendation rdf:type owl:Class ;
+                rdfs:subClassOf :Survey ;
+                rdfs:comment "This class represents the recommendation provided in a passenger survey. Yes or Not" ;
+                rdfs:label "Recommendation" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf :Survey ;
+        rdfs:comment "This class represents the content of a review within a passenger survey." ;
+        rdfs:label "Review" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Seat_Confort
+:Seat_Confort rdf:type owl:Class ;
+              rdfs:subClassOf :Rating ;
+              rdfs:comment "This class represents the comfort level of the seats experienced by passengers during the flight. It includes factors such as seat size, legroom, and overall seating experience." ;
+              rdfs:label "Seat Comfort" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Seat_Type
+:Seat_Type rdf:type owl:Class ;
+           rdfs:subClassOf :Passenger ;
+           rdfs:comment "Represents the type of seat selected by the passenger." ;
+           rdfs:label "Seat Type" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Survey
+:Survey rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasRating ;
+                              owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                   owl:onDatatype xsd:float ;
+                                                   owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                                                          ]
+                                                                          [ xsd:maxInclusive "10.0"^^xsd:float
+                                                                          ]
+                                                                        )
+                                                 ]
+                            ] ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasFlight ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Flight
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPassenger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Passenger
+                        ] ;
+        rdfs:comment "This class represents a passenger survey, the base of the analysis, including details such as author, review title, review content, date published, recommendation, and rating." ;
+        rdfs:label "Survey" ;
+        rdfs:sameAs "https://dbpedia.org/page/Survey_(human_research)" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#TittleReview
+:TittleReview rdf:type owl:Class ;
+              rdfs:subClassOf :Survey ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasTittleReview ;
+                                owl:someValuesFrom xsd:string
+                              ] ;
+              rdfs:comment "This class represents the title of a review within a passenger survey." ;
+              rdfs:label "Tittle Review" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#TravellerType
+:TravellerType rdf:type owl:Class ;
+               rdfs:subClassOf :Passenger ;
+               rdfs:comment "This class represents the type of traveller, such as leisure or business." ;
+               rdfs:label "Traveller Type" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Value_For_Money
+:Value_For_Money rdf:type owl:Class ;
+                 rdfs:subClassOf :Rating ;
+                 rdfs:comment "This class represents the perceived value for money of the flight experience. It reflects passengers' assessment of whether the price they paid for the flight was justified by the overall experience they received." ;
+                 rdfs:label "Value For Money" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Verified
+:Verified rdf:type owl:Class ;
+          rdfs:subClassOf :Survey ;
+          rdfs:comment "This class represents whether a survey has been verified or not." ;
+          rdfs:label "Verified" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf :Rating ;
+                                                                                              rdfs:comment "This class represents the quality and variety of food and beverages offered during the flight. It includes aspects such as meal options, taste, presentation, and availability of beverages." ;
+                                                                                              rdfs:label "Food & Beverages" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf :Rating ;
+                                                                                                 rdfs:comment "This class represents the availability and quality of onboard Wi-Fi and connectivity services. It includes factors such as internet speed, reliability, coverage, and accessibility of Wi-Fi on the aircraft." ;
+                                                                                                 rdfs:label "Wifi & Connectivity" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#A350
+:A350 rdf:type owl:NamedIndividual ,
+               :Aircraft .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#A380
+:A380 rdf:type owl:NamedIndividual ,
+               :Aircraft .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Alok_Mishra
+:Alok_Mishra rdf:type owl:NamedIndividual ,
+                      :Passenger ;
+             owl:differentFrom :Alwaleed_Althani ,
+                               :Brian_English ,
+                               :Craig_Cutts ,
+                               :Mary_Le ;
+             :hasFlight :FR_350A ;
+             :hasRating "10.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Alwaleed_Althani
+:Alwaleed_Althani rdf:type owl:NamedIndividual ,
+                           :Passenger ;
+                  owl:differentFrom :Brian_English ,
+                                    :Craig_Cutts ,
+                                    :Mary_Le ;
+                  :hasFlight :CA_380A ;
+                  :hasRating "10.0"^^xsd:float ;
+                  :hasReview "We flew on probably the first A380 the airline received but it’s up keep is very good the caviar was excellent and the rack of lamb was perfect the entertainment system though the screens were huge and not very cooperative it is very dated as for WiFi was bad to say the least. The seating in First Class was good and the toilets are huge I hope they update the A380." ;
+                  :hasSeatType "First Class" ;
+                  :hasTittleReview "I hope they update the A380" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Boeing_747
+:Boeing_747 rdf:type owl:NamedIndividual ,
+                     :Aircraft .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Boeing_777
+:Boeing_777 rdf:type owl:NamedIndividual ,
+                     :Aircraft .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Brian_English
+:Brian_English rdf:type owl:NamedIndividual ,
+                        :Passenger ;
+               owl:differentFrom :Craig_Cutts ,
+                                 :Mary_Le ;
+               :hasFlight :CA_380A ;
+               :hasRating "1.0"^^xsd:float ;
+               :hasReview "They convinced me that I needed to pay $1500 to add my middle name to my flight, or they wouldn't allow me on the plane. When I got to the airport, they didn't put my middle name on the ticket and I didn't have any issues. I paid $2300 to upgrade our seats to business class from Doha to Montreal. Not even an hour into the flight, the seat reclined on its own, pinching my leg. The seat wouldn't stay up the rest of the 13.5 hour flight." ;
+               :hasSeatType "Business Class" ;
+               :hasTittleReview "seat wouldn't stay up" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#CA_380A
+:CA_380A rdf:type owl:NamedIndividual ,
+                  :Flight ;
+         :hasAircraft :A380 ;
+         :hasAirline :Ryanair ;
+         :hasDateFlown <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_February> ;
+         :hasDestination :London ;
+         :hasOrigin :Sao_Paulo .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Craig_Cutts
+:Craig_Cutts rdf:type owl:NamedIndividual ,
+                      :Passenger ;
+             owl:differentFrom :Mary_Le ;
+             :hasFlight :GE_777B ;
+             :hasRating "9.0"^^xsd:float ;
+             :hasReview "After some pretty poor experiences this year using my preferred airline Singapore Airlines, I decided to try Qatar again after 6 years. Check in at Heathrow T4 quick and polite as was the boarding process. On board I found the A380 upper deck very good for economy, service from the crew was very good as was the food. Transfer in Doha quick and easy boarding for KUL done well and again seating felt roomy and comfortable even with the 3-4-3 seating on the 777, arrived KL a little early good flights. Returning check in polite unfortunately KLIA is a dreadful airport, possibly the worst in Asia with poor and uninterested staff along with poor facilities. That apart despite a 2 hour delay the flight to Doha was again pretty good, quick transfer in Doha all fine and the final flight to London was very nice. Bags recovered quickly, I will be using Qatar Airways in future." ;
+             :hasSeatType "Economy Class" ;
+             :hasTittleReview "I will be using Qatar Airways in future" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Doha
+:Doha rdf:type owl:NamedIndividual ,
+               :City ;
+      rdfs:sameAs "https://dbpedia.org/page/Doha" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#FR_350A
+:FR_350A rdf:type owl:NamedIndividual ,
+                  :Flight ;
+         :hasAircraft :A350 ;
+         :hasAirline :Ryanair ;
+         :hasDateFlown <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2023_December> ;
+         :hasDestination :Gdansk ;
+         :hasOrigin :Montreal .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#GE_777B
+:GE_777B rdf:type owl:NamedIndividual ,
+                  :Flight ;
+         :hasAircraft :Boeing_777 ;
+         :hasAirline :Ryanair ;
+         :hasDateFlown <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_January> ;
+         :hasDestination :Kuala_Lumpur ;
+         :hasOrigin :Kathmandu .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Gdansk
+:Gdansk rdf:type owl:NamedIndividual ,
+                 :City ;
+        rdfs:sameAs "https://dbpedia.org/page/Gda%C5%84sk" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Germany
+:Germany rdf:type owl:NamedIndividual ,
+                  :Country ;
+         rdfs:sameAs "https://dbpedia.org/page/Germany" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Kathmandu
+:Kathmandu rdf:type owl:NamedIndividual ,
+                    :City ;
+           rdfs:sameAs "https://dbpedia.org/page/Kathmandu" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Kuala_Lumpur
+:Kuala_Lumpur rdf:type owl:NamedIndividual ,
+                       :City ;
+              rdfs:sameAs "https://dbpedia.org/page/Kuala_Lumpur" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#London
+:London rdf:type owl:NamedIndividual ,
+                 :City ;
+        rdfs:sameAs "https://dbpedia.org/page/London" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Mary_Le
+:Mary_Le rdf:type owl:NamedIndividual ,
+                  :Passenger ;
+         :hasFlight :UK_747B ;
+         :hasRating "1.0"^^xsd:float ;
+         :hasReview "The delay of my flight from Haneda to Doha caused a bit of chaos upon arrival. Despite my efforts to reach the gate promptly, I was denied boarding due to luggage issues, and the lack of assistance added to the frustration. I paid for an Economy Comfort package, which was supposed to include an aisle seat. However, upon boarding, I was informed that no aisle seats were available, despite assurances beforehand. Additionally, my luggage tag was lost during the boarding pass exchange, leading to further uncertainty upon arrival in London. What was meant to be a 19-hour journey turned into a 27-hour ordeal. When I requested assistance from staff regarding a re-arrangement they promised to get back to me within 5-10 minutes, but no one followed up until I reached out again. The security queue at Heathrow on departure from the UK was incredibly long, with a wait time of about 1.5 hours just to get through. Overall, while the crew onboard was courteous and provided great service, the experience was marred by these inconveniences." ;
+         :hasSeatType "Economy Class" ;
+         :hasTittleReview "marred by inconveniences" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Montreal
+:Montreal rdf:type owl:NamedIndividual ,
+                   :City ;
+          rdfs:sameAs "https://dbpedia.org/page/Montreal" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#No
+:No rdf:type owl:NamedIndividual ,
+             :Recommendation .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Not
+:Not rdf:type owl:NamedIndividual ,
+              :Verified .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Qatar_Airways
+:Qatar_Airways rdf:type owl:NamedIndividual ,
+                        :Airlines ;
+               owl:backwardCompatibleWith "https://dbpedia.org/page/Qatar_Airways" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Ryanair
+:Ryanair rdf:type owl:NamedIndividual ,
+                  :Airlines ;
+         rdfs:sameAs "https://dbpedia.org/page/Ryanair" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Sao_Paulo
+:Sao_Paulo rdf:type owl:NamedIndividual ,
+                    :City ;
+           rdfs:sameAs "https://dbpedia.org/page/Sao_Paulo" .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#UK_747B
+:UK_747B rdf:type owl:NamedIndividual ,
+                  :Flight ;
+         :hasAircraft :Boeing_747 ;
+         :hasAirline :Qatar_Airways ;
+         :hasDateFlown <http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_March> ;
+         :hasDestination :Gdansk ;
+         :hasOrigin :Doha .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#0
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#0> rdf:type owl:NamedIndividual ,
+                                                                                        :Survey ;
+                                                                               :hasAuthor :Mary_Le ;
+                                                                               :hasVerified :Not .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2023_December
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2023_December> rdf:type owl:NamedIndividual ,
+                                                                                                    :DateFlown .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_February
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_February> rdf:type owl:NamedIndividual ,
+                                                                                                    :DateFlown .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_January
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_January> rdf:type owl:NamedIndividual ,
+                                                                                                   :DateFlown .
+
+
+###  http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_March
+<http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#2024_March> rdf:type owl:NamedIndividual ,
+                                                                                                 :DateFlown .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:Thing rdfs:comment "This class represents the overall concecpt of a passenger survey based on flights with Qatar Airways and Ryanair" ;
+          rdfs:label "Thing" .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#s> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#rating> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdfs:comment "This rule assigns a value of 1 to the \"Food & Beverages\" property for surveys with passengers in Economy Class seats." ;
+   rdfs:label "Economy Class with low quality Food And Beverages" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPassenger ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#p>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSeatType ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> "Economy Class"
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasFoodBeverages ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 1
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "This rule assigns a value of 5 to the \"SeatComfort\" property for surveys with passengers in First Class seats." ;
+   rdfs:label "First Class with great seat confort" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasPassenger ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#p>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSeatType ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> "First Class"
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSeatConfort ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 5
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "This rule infers the recommendation of a survey based on its overall rating. If the overall rating of a survey is greater than or equal to 7.5, it is inferred to be \"Yes\"." ;
+   rdfs:label "Positive recommendation rule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRating ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#rating>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#rating> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "7.5"^^xsd:float ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRecommendation ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> "true"^^xsd:boolean
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdfs:comment "This rule infers dissatisfaction of a survey based on its overall rating. If the overall rating of a survey is less than 4, it is inferred to have \"Low\" satisfaction saying Not to recommendation." ;
+   rdfs:label "Negative recommendation rule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Survey ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRating ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#rating>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#rating> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "4.0"^^xsd:float ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRecommendation ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> "false"^^xsd:boolean
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
