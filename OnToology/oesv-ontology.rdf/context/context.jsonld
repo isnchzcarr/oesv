@@ -1,0 +1,180 @@
+{
+  "@context" : {
+    "Inflight_Entertainment" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Inflight_Entertainment"
+    },
+    "hasFoodBeverages" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasFoodBeverages",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "Verified" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Verified"
+    },
+    "Airlines" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Airlines"
+    },
+    "hasRating" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasRating"
+    },
+    "Review" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Review"
+    },
+    "Recommendation" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Recommendation"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "Country" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Country"
+    },
+    "hasAircraft" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAircraft",
+      "@type" : "@id"
+    },
+    "hasGroundService" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasGroundService",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "_Connectivity" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity"
+    },
+    "hasRecommendation" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasRecommendation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "DatePublished" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#DatePublished"
+    },
+    "hasDestination" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDestination",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "hasSeatConfort" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasSeatConfort",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "Destination" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Destination"
+    },
+    "hasReview" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasReview",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Seat_Type" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Seat_Type"
+    },
+    "Origin" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Origin"
+    },
+    "DateFlown" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#DateFlown"
+    },
+    "hasCabinStaffService" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasCabinStaffService",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "hasTittleReview" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasTittleReview",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasFlight" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasFlight",
+      "@type" : "@id"
+    },
+    "Passenger" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Passenger"
+    },
+    "hasAuthor" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAuthor",
+      "@type" : "@id"
+    },
+    "Ground_Service" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Ground_Service"
+    },
+    "Survey" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Survey"
+    },
+    "hasVerified" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasVerified",
+      "@type" : "@id"
+    },
+    "backwardCompatibleWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#backwardCompatibleWith"
+    },
+    "Rating" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Rating"
+    },
+    "_Beverages" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages"
+    },
+    "Seat_Confort" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Seat_Confort"
+    },
+    "Aircraft" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Aircraft"
+    },
+    "TittleReview" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#TittleReview"
+    },
+    "Cabin_Staff_Service" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Cabin_Staff_Service"
+    },
+    "hasDataPublished" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDataPublished",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hasSeatType" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasSeatType",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Flight" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Flight"
+    },
+    "Author" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Author"
+    },
+    "City" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#City"
+    },
+    "Value_For_Money" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Value_For_Money"
+    },
+    "hasDateFlown" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasDateFlown",
+      "@type" : "@id"
+    },
+    "hasOrigin" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasOrigin",
+      "@type" : "@id"
+    },
+    "hasAirline" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasAirline",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "hasCountry" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasCountry",
+      "@type" : "@id"
+    },
+    "hasPassenger" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#hasPassenger",
+      "@type" : "@id"
+    },
+    "TravellerType" : {
+      "@id" : "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#TravellerType"
+    }
+  }
+}
