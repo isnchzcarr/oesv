@@ -1,0 +1,28 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Recommendation" "base:City" "base:Ground_Service" "base:Cabin_Staff_Service" "base:TravellerType" "base:Value_For_Money" "base:Survey" "base:Rating" "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages" "base:Review" "base:Passenger" "base:Seat_Confort" "base:Author" "base:Destination" "base:TittleReview" "base:Origin" "base:DatePublished" "base:DateFlown" "base:Aircraft" "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity" "base:Seat_Type" "base:Inflight_Entertainment" "base:Country" "base:Flight" "base:Verified" ; /*classes style*/
+	"base:City" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:DatePublished" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:Seat_Confort" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Value_For_Money" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Ground_Service" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Recommendation" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:TravellerType" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"base:Rating" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:Verified" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:Review" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:TittleReview" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:DateFlown" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:Aircraft" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:Author" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:Cabin_Staff_Service" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Origin" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:Seat_Type" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Country" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"base:Destination" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:Inflight_Entertainment" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+
+}
