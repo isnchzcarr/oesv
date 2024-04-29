@@ -1,0 +1,28 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "untitled-ontology-11:Inflight_Entertainment" "untitled-ontology-11:City" "untitled-ontology-11:Aircraft" "untitled-ontology-11:Flight" "untitled-ontology-11:DateFlown" "untitled-ontology-11:Rating" "untitled-ontology-11:DatePublished" "untitled-ontology-11:Author" "untitled-ontology-11:Ground_Service" "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages" "untitled-ontology-11:Destination" "untitled-ontology-11:Seat_Type" "untitled-ontology-11:Review" "untitled-ontology-11:Recommendation" "untitled-ontology-11:Origin" "untitled-ontology-11:Cabin_Staff_Service" "untitled-ontology-11:Survey" "untitled-ontology-11:TravellerType" "http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity" "untitled-ontology-11:Value_For_Money" "untitled-ontology-11:TittleReview" "untitled-ontology-11:Country" "untitled-ontology-11:Verified" "untitled-ontology-11:Seat_Confort" "untitled-ontology-11:Passenger" ; /*classes style*/
+	"untitled-ontology-11:Origin" -> "untitled-ontology-11:Flight" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:DateFlown" -> "untitled-ontology-11:Flight" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#WiFi_&_Connectivity" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Rating" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:TravellerType" -> "untitled-ontology-11:Passenger" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Seat_Type" -> "untitled-ontology-11:Passenger" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Recommendation" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Inflight_Entertainment" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Review" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:TittleReview" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Aircraft" -> "untitled-ontology-11:Flight" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:City" -> "untitled-ontology-11:Flight" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Destination" -> "untitled-ontology-11:Flight" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Country" -> "untitled-ontology-11:Passenger" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Seat_Confort" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Verified" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Ground_Service" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Value_For_Money" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/nacho-pc/ontologies/2024/3/untitled-ontology-11#Food_&_Beverages" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:DatePublished" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Author" -> "untitled-ontology-11:Survey" [ label = "rdfs:subClassOf" ];
+	"untitled-ontology-11:Cabin_Staff_Service" -> "untitled-ontology-11:Rating" [ label = "rdfs:subClassOf" ];
+
+}
